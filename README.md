@@ -9,7 +9,7 @@ the content of the text. She/He should solve a mystery by answering the question
 
 Example (the raw JSON for the mystery):
 
-```json
+```
 {
     mysteryText: 'Tom wrote a funny and mysterious story.',
     questions: [
