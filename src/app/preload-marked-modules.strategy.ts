@@ -1,8 +1,15 @@
 import { PreloadingStrategy, Route } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of'; // add the "of" operator to the Observable (or import from 'rxjs' to have it all)
 
-export class PreloadMarkedModules implements PreloadingStrategy {
+//
+// Purpose:
+// ========
+// CustomPreloadingStrategy to only preload routes with data.preload=true
+//
+
+export class PreloadMarkedModulesStrategy implements PreloadingStrategy {
     preload(route: Route, load: Function): Observable<any> {
-        return route.data['preload'] ? load() : null; // dev(train): what is this? original code instead of "null" => of(null);
+        return route.data['preload'] ? load() : Observable.of(null);
     }
 }

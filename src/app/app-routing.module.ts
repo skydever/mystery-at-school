@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
-import { PreloadMarkedModules } from './preload-marked-modules.strategy';
+import { PreloadMarkedModulesStrategy } from './preload-marked-modules.strategy';
 
 //
 // Purpose of this module:
@@ -17,12 +17,11 @@ export const routes: Routes = [
         pathMatch: 'full'
     },
     {
-        // dev(train): lazy loading and preloading
         path: 'settings',
+        // lazy loading
         loadChildren: 'app/core/user-settings/user-settings.module#UserSettingsModule',
-        data: {
-            preload: true // false
-        }
+        // preloading with CustomPreloadingStrategy: preload routes with data.preload=true
+        data: { preload: true }
     },
     {
         path: '**',
@@ -32,10 +31,10 @@ export const routes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forRoot(routes, {
-        preloadingStrategy: PreloadMarkedModules // PreloadAllModules
+        preloadingStrategy: PreloadMarkedModulesStrategy
     })],
     providers: [
-        PreloadMarkedModules
+        PreloadMarkedModulesStrategy
     ],
     exports: [RouterModule]
 })

@@ -1,5 +1,34 @@
 # mystery-at-school
+
 The idea to create a learning app, based on the homwork my sun has to do, was born ...
+
+## the vision (to be extended)
+
+Show a story, some text that our little users should read. After the reading ask some questions about
+the content of the text. She/He should solve a mystery by answering the questions.
+
+Example (the raw JSON for the mystery):
+
+```json
+{
+    mysteryText: 'Tom wrote a funny and mysterious story.',
+    questions: [
+        {
+            question: 'Who wrote a story?',
+            answer: 'Tom'
+        },{
+            question: 'How is the story Tom wrote?',
+            possibilities: [
+                    'funny and mysterious',
+                    'boring'
+            ],
+            answer: 'funny and mysterious'
+        }
+    ]
+}
+```
+
+- - -
 
 # MysteryAtSchool
 
