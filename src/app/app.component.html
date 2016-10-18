@@ -1,8 +1,45 @@
-<h1>
-	{{title}}
-</h1>
-<nav>
-	<a routerLink="/home" routerLinkActive="active">Home</a>
-	<a routerLink="/settings" routerLinkActive="active">User Settings</a>
-</nav>
-<router-outlet></router-outlet>
+<div [class.dark-theme]="isDarkTheme">
+	
+	<md-toolbar color="primary">
+		<span>
+			<button md-icon-button (click)="sidenav.open()">
+				<md-icon class="icon-20">reorder</md-icon>
+			</button>
+      <span id="title">{{title}}</span>
+    </span>
+		<button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+	</md-toolbar>
+	
+	<md-menu x-position="before" #menu="mdMenu">
+		<button md-menu-item (click)="isDarkTheme=!isDarkTheme">Toggle theme</button>
+		<button md-menu-item>Help</button>
+	</md-menu>
+
+	<md-sidenav-layout>
+		<md-sidenav align="start" mode="side" #sidenav>
+			<md-tab-group>
+
+				<md-tab>
+					<template md-tab-label>Mysteries</template>
+					<template md-tab-content>
+						<p><a class="nav-item" routerLink="/home" routerLinkActive="active">Home</a></p>
+						<p><a class="nav-item" routerLink="/settings" routerLinkActive="active">User Settings</a></p>
+					</template>
+				</md-tab>
+
+				<md-tab>
+					<template md-tab-label>Admin</template>
+					<template md-tab-content>
+					</template>
+				</md-tab>
+				
+			</md-tab-group>
+			<div class="nav-close-item">
+				<button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
+			</div>
+		</md-sidenav>
+		<router-outlet></router-outlet>
+	</md-sidenav-layout>
+</div>

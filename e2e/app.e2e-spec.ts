@@ -7,8 +7,8 @@ describe('mystery-at-school App', function() {
     page = new MysteryAtSchoolPage();
   });
 
-  it('should display message saying app works', () => {
+  it(`should display the title 'Mystery at school'`, () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getTitleText()).toEqual('Mystery at school');
   });
 });

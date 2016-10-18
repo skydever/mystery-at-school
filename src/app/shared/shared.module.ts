@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 
 //
 // Purpose of this module:
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   declarations: [
     // FilterTextComponent,
@@ -29,6 +31,7 @@ import { FormsModule } from '@angular/forms';
   exports: [
     CommonModule,
     FormsModule,
+    MaterialModule
     // FilterTextComponent,
     // InitCapsPipe
   ]
