@@ -16,13 +16,13 @@ export const routes: Routes = [
         redirectTo: 'home',
         pathMatch: 'full'
     },
-    {
-        path: 'settings',
-        // lazy loading
-        loadChildren: 'app/core/user-settings/user-settings.module#UserSettingsModule',
-        // preloading with CustomPreloadingStrategy: preload routes with data.preload=true
-        data: { preload: true }
-    },
+    // {
+    //     path: 'settings',
+    //     // lazy loading
+    //     loadChildren: 'app/core/user-settings/user-settings.module#UserSettingsModule',
+    //     // preloading with CustomPreloadingStrategy: preload routes with data.preload=true
+    //     data: { preload: true }
+    // },
     {
         path: '**',
         component: PageNotFoundComponent
