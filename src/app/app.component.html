@@ -1,0 +1,47 @@
+<div [class.dark-theme]="isDarkTheme">
+	
+	<md-toolbar color="primary">
+		<span>
+			<button md-icon-button (click)="sidenav.open()">
+				<md-icon class="icon-20">reorder</md-icon>
+			</button>
+      <span class="vmiddle"><a class="nav-item" routerLink="/home" id="title">{{title}}</a></span>
+    </span>
+		<button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+	</md-toolbar>
+	
+	<md-menu x-position="before" #menu="mdMenu">
+		<button md-menu-item (click)="isDarkTheme=!isDarkTheme">Toggle theme</button>
+		<button md-menu-item>Help (coming soon)</button>
+	</md-menu>
+
+	<md-sidenav-layout>
+		<md-sidenav align="start" mode="side" #sidenav>
+			<md-tab-group>
+
+				<md-tab>
+					<template md-tab-label>Mysteries</template>
+					<template md-tab-content>
+						<p><a class="nav-item" routerLink="/mystery/1" routerLinkActive="active">Solve a mystery</a></p>
+						<p><a class="nav-item" routerLink="/create-mystery" routerLinkActive="active">Create a mystery</a></p>
+					</template>
+				</md-tab>
+
+				<md-tab>
+					<template md-tab-label>Learning box</template>
+					<template md-tab-content>
+						<p><a class="nav-item" routerLink="/learnbox" routerLinkActive="active">Let's train words</a></p>
+						<p><a class="nav-item" routerLink="/add-box-item" routerLinkActive="active">Add a word</a></p>
+					</template>
+				</md-tab>
+				
+			</md-tab-group>
+			<div class="nav-close-item">
+				<button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
+			</div>
+		</md-sidenav>
+		<router-outlet></router-outlet>
+	</md-sidenav-layout>
+</div>
