@@ -2,6 +2,8 @@
 
 The idea to create a learning app, based on the homwork my sun has to do, was born ...
 
+... and in addition to that, i want to learn how to work with angular
+
 ## the vision (to be extended)
 
 Show a story, some text that our little users should read. After the reading ask some questions about
