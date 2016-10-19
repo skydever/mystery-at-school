@@ -2,7 +2,7 @@
 
 The idea to create a learning app, based on the homwork my sun has to do, was born ...
 
-... and in addition to that, i want to learn how to work with angular
+... and in addition to that i want to learn how to work with angular and github
 
 ## the vision (to be extended)
 
