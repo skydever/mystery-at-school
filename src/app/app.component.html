@@ -1,17 +1,17 @@
 <div [class.dark-theme]="isDarkTheme">
-	
+
 	<md-toolbar color="primary">
 		<span>
 			<button md-icon-button (click)="sidenav.open()">
 				<md-icon class="icon-20">reorder</md-icon>
 			</button>
       <span class="vmiddle"><a class="nav-item" routerLink="/home" id="title">{{title}}</a></span>
-    </span>
+		</span>
 		<button md-icon-button [md-menu-trigger-for]="menu">
       <md-icon>more_vert</md-icon>
     </button>
 	</md-toolbar>
-	
+
 	<md-menu x-position="before" #menu="mdMenu">
 		<button md-menu-item (click)="isDarkTheme=!isDarkTheme">Toggle theme</button>
 		<button md-menu-item>Help (coming soon)</button>
@@ -36,7 +36,7 @@
 						<p><a class="nav-item" routerLink="/add-box-item" routerLinkActive="active">Add a word</a></p>
 					</template>
 				</md-tab>
-				
+
 			</md-tab-group>
 			<div class="nav-close-item">
 				<button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
