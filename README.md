@@ -45,6 +45,10 @@ all words are in box 5 and from there typed correctly, they go back to box 1 wit
 it gets a star. Collect as many stars as possible. If all words have at least one star, let the user play [super mario](https://fir.sh/projects/jsnes/) 
 for a little time period (the more stars, the longer) :-)
 
+### Additional variant - learn how to type with a keyboard
+
+Do not hide the word. Show a keyboard instead and what fingers our little users should use for the next key(s - capital letters) to enter.
+
 ## Tech
 
 - [Angular CLI](https://cli.angular.io)
