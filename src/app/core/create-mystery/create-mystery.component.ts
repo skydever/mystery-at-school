@@ -33,14 +33,14 @@ export class CreateMysteryComponent implements OnInit {
     console.log(newMystery);
     this.mysteries.push(newMystery);
   }
-  updateItem(key: string, newText: string) {
-    this.mysteries.update(key, { text: newText });
+  updateItem(key: string, mystery: Mystery) {
+    this.mysteries.update(key, mystery);
   }
   deleteItem(key: string) {
     this.mysteries.remove(key);
   }
-  deleteEverything() {
-    this.mysteries.remove();
-  }
+  // deleteEverything() {
+  //   this.mysteries.remove();
+  // }
 
 }

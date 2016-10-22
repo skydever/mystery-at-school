@@ -6,8 +6,15 @@
       </md-input>-->
 
       <table style="width: 100%; padding-top: 10px;" cellspacing="0"><tr>
-        <td><md-input placeholder="The mystery" style="width: 100%" name="mysteryText" [(ngModel)]="newMystery.mystery"></md-input></td>
+        <td><md-input placeholder="Title" style="width: 100%" name="mysteryText" [(ngModel)]="newMystery.title"></md-input></td>
       </tr></table>
+      <table style="width: 100%; padding-top: 10px;" cellspacing="0"><tr>
+        <td><md-input placeholder="Category" style="width: 100%" name="mysteryText" [(ngModel)]="newMystery.category"></md-input></td>
+      </tr></table>
+      <table style="width: 100%; padding-top: 10px;" cellspacing="0"><tr>
+        <td><md-input placeholder="The story" style="width: 100%" name="mysteryText" [(ngModel)]="newMystery.story"></md-input></td>
+      </tr></table>
+
       <!--<p>
         <md-input class="demo-full-width" placeholder="Address" value="1600 Amphitheatre Pkway"></md-input>
         <md-input class="demo-full-width" placeholder="Address 2"></md-input>
@@ -35,7 +42,7 @@
       </md-input>-->
 
       <table style="width: 100%; padding-top: 10px;" cellspacing="0"><tr>
-        <td><md-input placeholder="The mystery" style="width: 100%" [value]="mystery.mystery"></md-input></td>
+        <td><md-input placeholder="The mystery" style="width: 100%" [value]="mystery.title"></md-input></td>
       </tr></table>
       <!--<p>
         <md-input class="demo-full-width" placeholder="Address" value="1600 Amphitheatre Pkway"></md-input>

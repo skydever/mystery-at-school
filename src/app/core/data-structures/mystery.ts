@@ -1,7 +1,8 @@
 import { Question } from './question';
 
 export class Mystery {
-    mystery: string;
+    title: string;
     category: string;
+    story: string;
     questions: Question[];
 }
