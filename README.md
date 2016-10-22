@@ -1,8 +1,8 @@
 ```
-Issues: // doc(train): can i open issues for a specific branch on github? 
+Issues: // dev(train): can i open issues for a specific branch on github? 
         //             what is the way to go here to do this on github instead of in the readme?
 - e2e tests are dead at the moment - fix this!
-- check how to really unit test firebase. is there a mockfirebase module? 
+- check how to really unit test firebase. is there a mockfirebase module?
 ```
 
 # Mystery at School
@@ -58,6 +58,7 @@ Do not hide the word. Show a keyboard instead and what fingers our little users 
 - [Material Design](https://material.angular.io)
 - [Firebase](https://firebase.google.com/)
 - AoT is coming soon (when the CLI is ready)
+- [i18n](https://angular.io/docs/ts/latest/cookbook/i18n.html) is on the radar (maybe for an extended vision too) ...
 - contribute if you have nice technical stuff to add
 - or just contribute if you like :-)
 
