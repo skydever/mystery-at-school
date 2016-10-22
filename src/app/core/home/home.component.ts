@@ -8,6 +8,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class HomeComponent implements OnInit {
 
+  // show newest mysteries
   items: FirebaseListObservable<any[]>;
 
   constructor(af: AngularFire) {
