@@ -10,26 +10,28 @@ import { Mystery } from '../data-structures/mystery';
 })
 export class CreateMysteryComponent implements OnInit {
 
-  mystery: Mystery;
+  newMystery: Mystery;
   mysteries: FirebaseListObservable<Mystery[]>;
 
   constructor(af: AngularFire) {
     if (af !== null) { // dev(clean): TODO check how to unit test with angularfire2!!
       // just create a new one - later show the list of existing mysteries at the bottom for edit
-      // this.mysteries = af.database.list('mysteries', {
-      //   query: {
-      //     limitToLast: 10,
-      //     orderByKey: true
-      //   }
-      // });
+      this.mysteries = af.database.list('mysteries', {
+        query: {
+          limitToLast: 10,
+          orderByKey: true
+        }
+      });
     }
   }
 
   ngOnInit() {
+    this.newMystery = new Mystery();
   }
 
-  addItem(newName: string) {
-    this.mysteries.push({ text: newName });
+  addItem(newMystery: Mystery) {
+    console.log(newMystery);
+    this.mysteries.push(newMystery);
   }
   updateItem(key: string, newText: string) {
     this.mysteries.update(key, { text: newText });
