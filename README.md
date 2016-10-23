@@ -95,7 +95,7 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 
 Build the app `ng build -prod` and deploy it `firebase deploy`.
 
-## Typings for Firebase
+### Typings for Firebase
 
 I had to add 
 ```javascript
