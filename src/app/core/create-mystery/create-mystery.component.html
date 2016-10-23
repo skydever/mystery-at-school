@@ -1,0 +1,46 @@
+<md-card class="mystery-card mystery-basic">
+  <md-toolbar color="primary">Create a mystery</md-toolbar>
+  <md-card-content>
+    <form>
+
+      <table style="width: 100%; padding-top: 10px;" cellspacing="0"><tr>
+        <td><md-input placeholder="Title" style="width: 100%" name="mysteryText" [(ngModel)]="mysteryToEdit.title"></md-input></td>
+      </tr></table>
+      <table style="width: 100%; padding-top: 10px;" cellspacing="0"><tr>
+        <td><md-input placeholder="Category" style="width: 100%" name="mysteryCategory" [(ngModel)]="mysteryToEdit.category"></md-input></td>
+      </tr></table>
+      <table style="width: 100%; padding-top: 10px;" cellspacing="0">
+        <tr><td><div>The story</div></td></tr>
+        <tr><td><textarea [rows]="storyRows" style="width: 100%; background-color: inherit; color: inherit;" name="mysteryStory" 
+                          [(ngModel)]="mysteryToEdit.story"
+                          (keyup)="onStoryChange()"></textarea></td>
+      </tr></table>
+
+      <div class="actions">
+        <button md-mini-fab (click)="initMysteryToEdit()" color="accent">
+          <md-icon>clear</md-icon>
+        </button>
+				<button md-fab (click)="saveItem(mysteryToEdit)" color="warn">
+          <md-icon *ngIf="mysteryKey" class="md-24">save</md-icon>
+          <md-icon *ngIf="!mysteryKey" class="md-24">playlist_add</md-icon>
+        </button>
+			</div>
+
+    </form>
+  </md-card-content>
+</md-card>
+
+<md-card class="mystery-card mystery-basic">
+  <md-toolbar color="primary">Available mysteries</md-toolbar>
+  <md-card-content>
+    <div *ngFor="let mystery of mysteries | async">
+
+      <table style="width: 100%; padding-top: 10px;" cellspacing="0"><tr>
+        <td [style.font-weight]="mystery.$key===mysteryKey ? 'bold': 'inherit'" style="font-size: larger; cursor: pointer;" (click)="editItem(mystery, mystery.$key)">{{mystery.title}}</td>
+      </tr></table>
+
+    </div>
+  </md-card-content>
+</md-card>
+
+<div class="scroll-fix"></div>

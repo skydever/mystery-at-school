@@ -49,6 +49,26 @@ md-sidenav {
   vertical-align: middle;
 }
 
+.mystery-card {
+  margin: 20px;
+} 
+
+.mystery-basic {
+
+}
+
+.actions {
+  text-align: right;
+}
+
+.scroll-fix {
+  height: 300px;
+}
+
+body {
+  overflow: hidden;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
