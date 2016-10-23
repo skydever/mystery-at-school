@@ -16,6 +16,8 @@ The idea to create a learning app, based on the homwork my sun has to do, was bo
 Show a story, some text that our little users should read. After the reading ask some questions about
 the content of the text. She/He should solve a mystery by answering the questions.
 
+See the current version in action: [Mystery at School](https://mystery-at-school.firebaseapp.com/create-mystery)
+
 Example (the raw JSON for a mystery):
 
 ```

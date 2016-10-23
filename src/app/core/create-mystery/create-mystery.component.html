@@ -33,12 +33,14 @@
 <md-card class="mystery-card mystery-basic">
   <md-toolbar color="primary">Available mysteries</md-toolbar>
   <md-card-content>
-    <form *ngFor="let mystery of mysteries | async">
+    <div *ngFor="let mystery of mysteries | async">
 
       <table style="width: 100%; padding-top: 10px;" cellspacing="0"><tr>
         <td [style.font-weight]="mystery.$key===mysteryKey ? 'bold': 'inherit'" style="font-size: larger; cursor: pointer;" (click)="editItem(mystery, mystery.$key)">{{mystery.title}}</td>
       </tr></table>
 
-    </form>
+    </div>
   </md-card-content>
 </md-card>
+
+<div class="scroll-fix"></div>

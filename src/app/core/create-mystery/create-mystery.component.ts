@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
+// import 'rxjs/add/operator/map';
 
 import { Mystery } from '../data-structures/mystery';
 
@@ -18,6 +19,7 @@ export class CreateMysteryComponent implements OnInit {
   storyRows: number;
 
   mysteries: FirebaseListObservable<Mystery[]>;
+  categories: string[];
 
   constructor(af: AngularFire) {
     if (af !== null) { // dev(clean): TODO check how to unit test with angularfire2!!
@@ -27,6 +29,7 @@ export class CreateMysteryComponent implements OnInit {
           orderByKey: true
         }
       });
+      // obtain distinct categories
     }
   }
 
@@ -70,7 +73,7 @@ export class CreateMysteryComponent implements OnInit {
   }
 
   editItem(mystery: Mystery, key: string) {
-    this.mysteryToEdit = mystery;
+    this.mysteryToEdit = this.getMysteryClone(mystery);
     this.mysteryKey = key;
   }
 
