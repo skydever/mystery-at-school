@@ -1,10 +1,3 @@
-```
-Issues: // dev(train): can i open issues for a specific branch on github? 
-        //             what is the way to go here to do this on github instead of in the readme?
-- e2e tests are dead at the moment - fix this!
-- check how to really unit test firebase. is there a mockfirebase module?
-```
-
 # Mystery at School
 
 The idea to create a learning app, based on the homwork my sun has to do, was born ...
