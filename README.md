@@ -96,6 +96,12 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## Firebase
+
+### Deployment
+
+Build the app `ng build -prod` and deploy it `firebase deploy`.
+
 ## Typings for Firebase
 
 I had to add 
