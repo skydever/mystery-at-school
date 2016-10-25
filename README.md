@@ -50,6 +50,7 @@ Do not hide the word. Show a keyboard instead and what fingers our little users 
 - [Angular Router](https://vsavkin.com/)
   - lazy loading
   - preloading
+- [Animations](https://angular.io/docs/ts/latest/guide/animations.html)
 - [Material Design](https://material.angular.io)
 - [Firebase](https://firebase.google.com/)
 - AoT is coming soon (when the CLI is ready)
