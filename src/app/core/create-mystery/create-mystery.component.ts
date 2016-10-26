@@ -1,27 +1,29 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 // import 'rxjs/add/operator/map';
+import * as _ from 'lodash';
 
-import { Animations } from '../../shared/animations/animations';
-import { Mystery } from '../data-structures/mystery';
+import { ListItemAnimation } from '../../shared/animations/list-item-animation';
+import { Mystery } from '../../shared/data-structures/mystery';
+import { Question } from '../../shared/data-structures/question';
+import { RouteAnimation } from '../../shared/animations/route-animation';
 
 @Component({
   selector: 'app-create-mystery',
   templateUrl: './create-mystery.component.html',
   styleUrls: ['./create-mystery.component.scss'],
-  animations: [Animations.routeAnimation]
+  animations: [
+    RouteAnimation.routeAnimation,
+    ListItemAnimation.listItemAnimation
+  ]
 })
 export class CreateMysteryComponent implements OnInit {
 
   // dev(train): animation on route transitions
   @HostBinding('@routeAnimation') routeAnimation = 'true';
 
-  storyRowsDefault: number = 5;
-
   mysteryKey: string;
   mysteryToEdit: Mystery;
-
-  storyRows: number;
 
   mysteries: FirebaseListObservable<Mystery[]>;
   categories: string[];
@@ -34,7 +36,7 @@ export class CreateMysteryComponent implements OnInit {
           orderByKey: true
         }
       });
-      // obtain distinct categories
+      // TODO obtain distinct categories
     }
   }
 
@@ -45,34 +47,26 @@ export class CreateMysteryComponent implements OnInit {
   initMysteryToEdit(): void {
     this.mysteryToEdit = new Mystery();
     this.mysteryKey = undefined;
-    this.storyRows = this.storyRowsDefault;
   }
 
   getMysteryClone(mystery: Mystery): Mystery {
-    return Object.assign({}, new Mystery(), {
-      title: mystery.title,
-      category: mystery.category,
-      story: mystery.story
+    let clonedMystery = _.cloneDeep(mystery);
+    // remove FireBase internals, just keep the clean Mystery
+    clonedMystery = Object.assign({}, new Mystery(), {
+      title: clonedMystery.title,
+      category: clonedMystery.category,
+      story: clonedMystery.story,
+      questions: clonedMystery.questions
     });
-  }
 
-  onStoryChange() {
-    if (this.mysteryToEdit.story) {
-      let rows = this.mysteryToEdit.story.split(/\r\n|\r|\n/).length + 1;
-      this.storyRows = rows > this.storyRowsDefault ? rows : this.storyRowsDefault;
-    } else {
-      this.storyRows = this.storyRowsDefault;
-    }
+    return clonedMystery;
   }
 
   saveItem(mystery: Mystery) {
-    // console.log(mystery);
     if (this.mysteryKey) {
-      // console.log(`update: ${this.mysteryKey}`);
       this.mysteries.update(this.mysteryKey, this.getMysteryClone(mystery));
     } else {
-      // console.log(`new`);
-      this.mysteries.push(mystery);
+      this.mysteries.push(this.getMysteryClone(mystery));
     }
     this.initMysteryToEdit();
   }
@@ -80,6 +74,20 @@ export class CreateMysteryComponent implements OnInit {
   editItem(mystery: Mystery, key: string) {
     this.mysteryToEdit = this.getMysteryClone(mystery);
     this.mysteryKey = key;
+  }
+
+  addQuestion(mystery: Mystery) {
+    if (!mystery.questions) {
+      mystery.questions = [];
+    }
+    mystery.questions.push(new Question());
+  }
+
+  removeQuestion(mystery: Mystery, question: Question) {
+    let idx = mystery.questions.indexOf(question);
+    if (idx > -1) {
+      mystery.questions.splice(idx, 1);
+    }
   }
 
   // deleteItem(key: string) {

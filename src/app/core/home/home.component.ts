@@ -1,12 +1,12 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 
-import { Animations } from '../../shared/animations/animations';
+import { RouteAnimation } from '../../shared/animations/route-animation';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: [Animations.routeAnimation]
+  animations: [RouteAnimation.routeAnimation]
 })
 export class HomeComponent implements OnInit {
 

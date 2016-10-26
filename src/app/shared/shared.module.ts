@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 
+import { MysteryEditComponent } from './mystery/mystery-edit/mystery-edit.component';
+import { QuestionEditComponent } from './mystery/question-edit/question-edit.component';
+
 //
 // Purpose of this module:
 // =======================
@@ -24,16 +27,17 @@ import { MaterialModule } from '@angular/material';
     MaterialModule
   ],
   declarations: [
-    // FilterTextComponent,
-    // InitCapsPipe
+    MysteryEditComponent,
+    QuestionEditComponent
   ],
   //   providers: [FilterTextService],
   exports: [
     CommonModule,
     FormsModule,
-    MaterialModule
-    // FilterTextComponent,
-    // InitCapsPipe
+    MaterialModule,
+    // shared components
+    MysteryEditComponent,
+    QuestionEditComponent
   ]
 })
 export class SharedModule { }

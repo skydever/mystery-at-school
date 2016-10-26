@@ -1,0 +1,17 @@
+<form>
+
+	<div style="width: 100%; padding-top: 10px;">
+		<md-input placeholder="Title" style="width: 100%" name="mysteryText" [(ngModel)]="mystery.title"></md-input>
+	</div>
+	<div style="width: 100%; padding-top: 10px;">
+		<md-input placeholder="Category" style="width: 100%" name="mysteryCategory" [(ngModel)]="mystery.category"></md-input>
+	</div>
+	<div style="width: 100%; padding-top: 10px;">
+		<div>The story</div>
+	</div>
+	<div style="width: 100%; padding-top: 10px;">
+		<textarea [rows]="storyRows" style="width: 100%; background-color: inherit; color: inherit;" name="mysteryStory" [(ngModel)]="mystery.story"
+			(keyup)="onStoryChange()"></textarea>
+	</div>
+
+</form>

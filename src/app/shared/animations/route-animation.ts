@@ -1,6 +1,6 @@
 import { animate, state, style, trigger, transition } from '@angular/core';
 
-export class Animations {
+export class RouteAnimation {
 
     static scaleRouteAnimation = trigger('routeAnimation', [
         state('*', style({ transform: 'translateX(0)', opacity: 1 })),
@@ -53,6 +53,6 @@ export class Animations {
     // dev(train): set the route animation
     //             IMPORTANT: at the bottom of the class, the animation has to be defined first! JS
     // static routeAnimation = Animations.scaleRouteAnimation;
-    static routeAnimation = Animations.translatexRouteAnimation;
+    static routeAnimation = RouteAnimation.translatexRouteAnimation;
 
 }
