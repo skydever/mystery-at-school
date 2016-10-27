@@ -1,15 +1,15 @@
 <div [class.dark-theme]="isDarkTheme">
 
 	<md-toolbar color="primary">
-		<span>
-			<button md-icon-button (click)="sidenav.open()">
-				<md-icon class="icon-20">reorder</md-icon>
+		<div style="display: flex;">
+			<button md-mini-fab color="warn" (click)="sidenav.toggle()">
+				<md-icon>menu</md-icon>
 			</button>
-      <span class="vmiddle"><a class="nav-item" routerLink="/home" id="title">{{title}}</a></span>
-		</span>
+      		<div style="padding-top: 9px; padding-left: 8px;" class="vmiddle"><a class="nav-item" routerLink="/home" id="title">{{title}}</a></div>
+		</div>
 		<button md-icon-button [md-menu-trigger-for]="menu">
-      <md-icon>more_vert</md-icon>
-    </button>
+			<md-icon>more_vert</md-icon>
+		</button>
 	</md-toolbar>
 
 	<md-menu x-position="before" #menu="mdMenu">
@@ -38,9 +38,6 @@
 				</md-tab>
 
 			</md-tab-group>
-			<div class="nav-close-item">
-				<button md-raised-button (click)="sidenav.close()" color="accent">CLOSE</button>
-			</div>
 		</md-sidenav>
 		<router-outlet></router-outlet>
 	</md-sidenav-layout>

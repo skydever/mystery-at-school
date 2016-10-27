@@ -36,7 +36,7 @@ export class ListItemAnimation {
         ])
     ]);
 
-    static listItemAnimation = ListItemAnimation.translatexListItemAnimation;
-    // static listItemAnimation = ListItemAnimation.scaleListItemAnimation;
+    // static listItemAnimation = ListItemAnimation.translatexListItemAnimation;
+    static listItemAnimation = ListItemAnimation.scaleListItemAnimation;
 
 }
